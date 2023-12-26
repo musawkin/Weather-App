@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="10dp">
+
+
+    <TextView
+        android:id="@+id/tvHour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="19:20"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvHour"
+        app:layout_constraintStart_toStartOf="@+id/tvHour"
+        app:layout_constraintTop_toBottomOf="@+id/tvHour" />
+
+    <TextView
+        android:id="@+id/tvTemp_c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="0.5"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+    <TextView
+        android:id="@+id/tvCelcium_o"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="o"
+        android:layout_marginStart="3dp"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@id/tvTemp_c"
+        app:layout_constraintTop_toTopOf="@id/tvTemp_c"
+ />
+
+    <TextView
+        android:id="@+id/tvCelcium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="c"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/tvCelcium_o"
+        app:layout_constraintTop_toTopOf="@id/tvCelcium_o"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

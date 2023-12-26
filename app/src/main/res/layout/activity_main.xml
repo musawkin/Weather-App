@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    android:background="#20B5F8"
+    tools:context=".MainActivity">
+
+    <Spinner
+        android:id="@+id/spCity"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/cities"
+        style="@style/Theme.Weather"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/Image1" />
+
+    <TextView
+        android:id="@+id/tvCurrentTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sora_light"
+        android:text="13"
+        android:textColor="@color/white"
+        android:textSize="80sp"
+        app:layout_constraintEnd_toStartOf="@id/tvCelsiusCircle"
+        app:layout_constraintTop_toTopOf="@+id/tvCelsiusCircle" />
+
+    <TextView
+        android:id="@+id/tvCelsiusCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sora_light"
+        android:text="o"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvCelsius"
+        app:layout_constraintTop_toTopOf="@+id/tvCelsius" />
+
+    <TextView
+        android:id="@+id/tvCelsius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sora_light"
+        android:text="c"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/tvCondition1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/sora_light"
+        android:text="13"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvCelsius"
+        app:layout_constraintTop_toBottomOf="@id/Image1" />
+
+    <ImageView
+        android:id="@+id/ivWindIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="27dp"
+        android:src="@drawable/ic_wind"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCondition1"
+        />
+    <TextView
+        android:id="@+id/tvWindCondition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sora_light"
+        android:text="13"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/ivWindIcon"
+        app:layout_constraintBottom_toBottomOf="@id/ivWindIcon"
+ />
+
+
+    <ImageView
+        android:id="@+id/ivHumidity"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_humidity"
+        app:layout_constraintBottom_toBottomOf="@+id/ivWindIcon"
+        app:layout_constraintStart_toEndOf="@+id/tvWindCondition" />
+
+    <TextView
+        android:id="@+id/tvAirHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/sora_light"
+        android:text="10"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivHumidity"
+        app:layout_constraintStart_toEndOf="@id/ivHumidity" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvForecastHour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_for_recycler"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivWindIcon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/sora_regular"
+        android:text="hourly forecast"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@+id/rvForecastHour"
+        app:layout_constraintTop_toBottomOf="@+id/rvForecastHour" />
+
+    <ImageView
+
+        android:id="@+id/Image1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCurrentTemp"
+        app:layout_constraintEnd_toStartOf="@+id/tvCurrentTemp"
+         />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvForecastWeek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_for_recycler"
+        android:layout_marginTop="45dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvForecastHour" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/sora_regular"
+        android:text="3 day forecast"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@+id/rvForecastWeek"
+        app:layout_constraintTop_toBottomOf="@+id/rvForecastWeek" />
+
+    <!--    <com.google.android.material.button.MaterialButtonToggleGroup-->
+<!--        android:id="@+id/mButtonGroup"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        app:checkedButton="@id/btToday"-->
+<!--        app:singleSelection="true"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="@id/rvForecastHour"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/rvForecastHour">-->
+
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/btToday"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:checkable="true"-->
+<!--            android:backgroundTint="@drawable/selector_days"-->
+<!--            android:textColor="@drawable/selector_days_text"-->
+<!--            android:text="Today"-->
+<!--            android:textSize="20dp" />-->
+
+
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/btTomorrow"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:backgroundTint="@drawable/selector_days"-->
+<!--            android:textColor="@drawable/selector_days_text"-->
+<!--            android:checkable="true"-->
+<!--            android:text="Tbt2"-->
+<!--            android:textSize="20dp" />-->
+
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/bt3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:backgroundTint="@drawable/selector_days"-->
+<!--            android:textColor="@drawable/selector_days_text"-->
+<!--            android:checkable="true"-->
+<!--            android:text="Today"-->
+<!--            android:textSize="20dp" />-->
+
+<!--    </com.google.android.material.button.MaterialButtonToggleGroup>-->
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
